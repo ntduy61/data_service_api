@@ -19,8 +19,13 @@ router.post("/dataService", async (req, res)=>{
 
         const [rows] = await conn.query(`CALL ${spName}(${paramSP})`, values);
         conn.release();
+
+        const cleanResults = rows.filter(
+            r => Array.isArray(r) && r.length >= 0
+        );
+
         res.json({
-            recordsets: rows
+            recordsets: cleanResults
         });
         
 
