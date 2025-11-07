@@ -72,15 +72,33 @@ Example `.env` file:
 
 ```
 PORT=3000
+# or mssql, pg, oracle
 DB_TYPE=mysql
-DB_HOST=localhost
-DB_PORT=3306
-DB_USER=root
-DB_PASS=123456
-DB_NAME=my_database
-UPLOAD_PATH=uploads
-LOG_PATH=logs
-JWT_SECRET=your_secret_key
+
+#----MYSQL-----
+MYSQL_HOST=127.0.0.1
+MYSQL_PORT=3306
+MYSQL_USER=root
+MYSQL_PASS=110390
+MYSQL_DB=data_service_api
+
+#----MSSQL----
+
+#----PG------
+
+#----Oracle-----
+
+#--file config--
+#/var/wwww/uploads hoac ./uploads
+UPLOAD_DIR=./uploads
+#Max size file (bytes) 10M
+UPLOAD_MAX_SIZE=10485760
+
+#--Log Dir
+LOG_DIR=./logs
+
+#json web tokten secre key
+SECRET_KEY=7d1abf008a6a149189995e26592d2633dac0b549a5293eaeb6234c48c8235a8d29331ba5dc3083e3b9da292f33655a6e63fdfbdd5e06f68d76850215f7163434
 ```
 
 ---
